@@ -1,38 +1,45 @@
-import React from 'react';
+import React, {Component} from 'react';
+
+class Tabs extends Component {
 
 
-const Tabs = () => {
-    return (
-        <div className="tabsWrapper">
+    onSelectTab = (tab) => {
+        console.log(`sending keyword ${tab} to parent`);
+        this.props.onSelectTab(tab);
+    };
 
-            <a href="# " className="tab">
+
+    render() {
+        return (<div className="tabsWrapper">
+
+            <a href="# " className="tab" onClick={() => this.onSelectTab('brazil')}>
                 <i className=" fas fa-globe-americas"></i>
                 Brazil
             </a>
 
-            <a href="# " className="tab">
+            <a href="# " className="tab" onClick={() => this.onSelectTab('usa')}>
                 <i className=" fas fa-globe-americas"></i>
-                Canada
+                USA
             </a>
 
 
-            <a href="# " className="tab">
+            <a href="# " className="tab" onClick={() => this.onSelectTab('search-results')}>
                 <i className="fab fa-hotjar"></i>
-            Search Results
+                Search Results
             </a>
 
-            <a href="# " className="tab">
+            <a href="# " className="tab" onClick={() => this.onSelectTab('india')}>
                 <i className=" fas fa-globe-americas"></i>
                 India
             </a>
 
-            <a href="# " className="tab">
+            <a href="# " className="tab" onClick={() => this.onSelectTab('australia')}>
                 <i className=" fas fa-globe-americas"></i>
-                China
+                Australia
             </a>
 
-        </div>
-    )
-};
+        </div>)
+    }
+}
 
 export default Tabs;

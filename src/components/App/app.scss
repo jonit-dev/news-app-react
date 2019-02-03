@@ -48,6 +48,9 @@ main {
         flex: 1 1 40%;
         object-fit: cover;
         object-position: center;
+        width: 227px;
+        height: 200px;
+
       }
 
       .newsDescription {
@@ -57,6 +60,15 @@ main {
         box-sizing: border-box;
         font-size: 0.9rem;
         color: $news-app-gray;
+
+        .newsAuthor {
+          font-size: 1rem;
+          font-family: $font-primary;
+          color: $news-app-gray;
+          font-weight: bold;
+          padding: 0 0 1rem;
+
+        }
 
       }
 

@@ -10,14 +10,12 @@ import newsApi from '../../api/news';
 
 class App extends Component {
 
-    state = {news: []};
+    state = {news: [], selectedTab: null, term: ""};
 
-    fetchNews = async () => {
+    fetchNews = async (params) => {
 
         const response = await newsApi.get('top-headlines', {
-            params: {
-                country: 'us'
-            }
+            params: params
         });
 
         console.log(response.data.articles);
@@ -26,12 +24,79 @@ class App extends Component {
 
     };
 
+    onSelectTab = (tab) => {
+        this.setState({selectedTab: tab});
+
+
+        switch (tab) {
+            case 'brazil':
+                this.fetchNews({
+                    country: 'br',
+                    q: this.state.term
+                });
+                break;
+
+            case 'search-results':
+                this.fetchNews({
+                    country: 'us',
+                    q: this.state.term
+                });
+                break;
+
+
+            case 'usa':
+                this.fetchNews({
+                    country: 'us',
+                    q: this.state.term
+                });
+                break;
+            case 'india':
+                this.fetchNews({
+                    country: 'in',
+                    q: this.state.term
+                });
+                break;
+            case 'china':
+                this.fetchNews({
+                    country: 'au',
+                    q: this.state.term
+                });
+                break;
+            default:
+                this.fetchNews({
+                    country: 'us',
+                    q: this.state.term
+                })
+
+
+        }
+
+    };
+
+    componentDidUpdate() {
+
+    }
+
 
     componentDidMount() {
 
-        this.fetchNews();
+        this.fetchNews({
+            country: 'us',
+            q: this.state.term
+        })
 
     }
+
+    searchResults = () => {
+
+        console.log("clicked search button");
+
+        this.fetchNews({
+            country: 'us',
+            q: this.state.term
+        })
+
+    };
 
 
     render() {
@@ -44,13 +109,16 @@ class App extends Component {
                         <div className="searchBar">
                             <TextField className="searchField"
                                        hintText="Search "
+                                       value={this.state.term}
+                                       onChange={(e) => this.setState({term: e.target.value})}
                             />
 
-                            <RaisedButton className="searchButton" label="Search" secondary={true}/>
+                            <RaisedButton className="searchButton" label="Search" secondary={true}
+                                          onClick={this.searchResults}/>
 
                         </div>
 
-                        <Tabs/>
+                        <Tabs onSelectTab={this.onSelectTab}/>
 
 
                         <div className="newsContainer">
