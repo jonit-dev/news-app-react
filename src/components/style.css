@@ -1,0 +1,70 @@
+/* Colors =========================================== */
+body {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+
+main {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  padding: 5%; }
+  main .searchBar {
+    display: flex;
+    flex-wrap: wrap; }
+    main .searchBar .searchField {
+      flex: 1 1 60%; }
+    main .searchBar .searchButton {
+      height: 100%;
+      flex: 1 1 auto;
+      margin-left: 1rem;
+      box-shadow: none !important; }
+  main .newsContainer {
+    border: 1px solid #dcdcdc52;
+    border-radius: 5px;
+    min-height: 70vw;
+    width: 100%;
+    margin-top: 1rem; }
+    main .newsContainer .news {
+      display: flex;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      padding: 1rem; }
+      main .newsContainer .news .newsPicture {
+        flex: 1 1 40%;
+        object-fit: cover;
+        object-position: center; }
+      main .newsContainer .news .newsDescription {
+        flex: 1 1 60%;
+        font-family: "Roboto", sans-serif;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+        color: #434343; }
+
+.tabsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #dcdcdc52;
+  border-radius: 5px;
+  margin-top: 1rem; }
+  .tabsWrapper .tab {
+    padding: 1rem;
+    box-sizing: border-box;
+    color: #434343;
+    flex: 1 1 100px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: 'Roboto', sans-serif; }
+    .tabsWrapper .tab i {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      margin-bottom: .3rem; }
+    .tabsWrapper .tab:hover {
+      color: #ff4081; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+main {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  padding: 5%;
+
+  .searchBar {
+    display: flex;
+    flex-wrap: wrap;
+
+    .searchField {
+      flex: 1 1 60%;
+    }
+
+    .searchButton {
+      height: 100%;
+      flex: 1 1 auto;
+      margin-left: 1rem;
+      box-shadow: none !important;
+    }
+
+  }
+
+  .newsContainer {
+    border: 1px solid #dcdcdc52;
+    border-radius: 5px;
+    min-height: 70vw;
+    width: 100%;
+    margin-top: 1rem;
+
+    .news {
+      display: flex;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      padding: 1rem;
+
+      .newsPicture {
+        flex: 1 1 40%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .newsDescription {
+        flex: 1 1 60%;
+        font-family: $font-primary;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+        color: $news-app-gray;
+
+      }
+
+    }
+
+  }
+
+}

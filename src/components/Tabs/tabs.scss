@@ -1,0 +1,32 @@
+.tabsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #dcdcdc52;
+  border-radius: 5px;
+  margin-top: 1rem;
+
+  .tab {
+
+    padding: 1rem;
+    box-sizing: border-box;
+
+    color: $news-app-gray;
+    flex: 1 1 100px;
+    i {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      margin-bottom: .3rem;
+    }
+
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+
+    &:hover {
+      color: $news-app-secondary;
+    }
+
+  }
+
+}
